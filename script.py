@@ -2,6 +2,9 @@ import time
 import json
 
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 
@@ -38,11 +41,13 @@ class TipScanner():
 
     def mount_pages(self):
         self.driver.get(self.base_url + self.channels[0])
-        time.sleep(5)
+        #time.sleep(5)
         body = False
         # TODO -> NOT WORKING. fazer programa espera body ficar pronto ( WebDriver.Wait )
         for channels in self.channels[1:]:
-            print("tentando abrir paginas")
+            print(f"LOG INFO -> Abringo canais: {channels}")
+            #element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "xpath")))
+            time.sleep(2)
             body = self.driver.find_element_by_xpath("//body")
             body.send_keys(Keys.CONTROL+ "t")
             body.send_keys(Keys.TAB)

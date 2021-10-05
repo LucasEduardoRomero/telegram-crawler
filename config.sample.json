@@ -1,0 +1,10 @@
+{
+    "executable_path": "complete\\path\\to\\your\\chromedriver\\exe",
+    "user_data_dir": "C:\\Users\\my_user\\AppData\\Local\\Google\\Chrome\\User Data",
+    "profile_dir": "nome_do_profile",
+    "channelsId": [
+        "id_canal_um",
+        "id_canal_dois",
+        "id_canal_tres"
+    ]
+}
